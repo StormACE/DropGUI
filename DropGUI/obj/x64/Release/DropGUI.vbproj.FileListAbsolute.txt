@@ -24,3 +24,4 @@ C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI
 C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.xml
 C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.pdb
 C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.FormGUImanager.resources
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.DialogNew.resources

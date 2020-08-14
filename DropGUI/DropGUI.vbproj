@@ -96,6 +96,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DialogNew.Designer.vb">
+      <DependentUpon>DialogNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DialogNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormGUImanager.Designer.vb">
       <DependentUpon>FormGUImanager.vb</DependentUpon>
     </Compile>
@@ -133,6 +139,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DialogNew.resx">
+      <DependentUpon>DialogNew.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGUImanager.resx">
       <DependentUpon>FormGUImanager.vb</DependentUpon>
     </EmbeddedResource>

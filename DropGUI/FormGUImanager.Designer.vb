@@ -22,6 +22,7 @@ Partial Class FormGUImanager
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormGUImanager))
         Me.ListViewGUI = New System.Windows.Forms.ListView()
         Me.CHName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -31,6 +32,15 @@ Partial Class FormGUImanager
         Me.CHOutput = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.CHStatus = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ButtonClose = New System.Windows.Forms.Button()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.NewToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ButtonNew = New System.Windows.Forms.Button()
+        Me.ContextMenuStrip1.SuspendLayout()
+        Me.ContextMenuStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
         'ListViewGUI
@@ -87,6 +97,55 @@ Partial Class FormGUImanager
         Me.ButtonClose.Text = "Close"
         Me.ButtonClose.UseVisualStyleBackColor = False
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(135, 100)
+        '
+        'NewToolStripMenuItem
+        '
+        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(134, 32)
+        Me.NewToolStripMenuItem.Text = "New"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(134, 32)
+        Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(134, 32)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem1})
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(120, 36)
+        '
+        'NewToolStripMenuItem1
+        '
+        Me.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1"
+        Me.NewToolStripMenuItem1.Size = New System.Drawing.Size(119, 32)
+        Me.NewToolStripMenuItem1.Text = "New"
+        '
+        'ButtonNew
+        '
+        Me.ButtonNew.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ButtonNew.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.ButtonNew.Location = New System.Drawing.Point(593, 496)
+        Me.ButtonNew.Name = "ButtonNew"
+        Me.ButtonNew.Size = New System.Drawing.Size(75, 36)
+        Me.ButtonNew.TabIndex = 3
+        Me.ButtonNew.Text = "New"
+        Me.ButtonNew.UseVisualStyleBackColor = False
+        '
         'FormGUImanager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -94,6 +153,7 @@ Partial Class FormGUImanager
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(778, 544)
+        Me.Controls.Add(Me.ButtonNew)
         Me.Controls.Add(Me.ButtonClose)
         Me.Controls.Add(Me.ListViewGUI)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -102,6 +162,8 @@ Partial Class FormGUImanager
         Me.Name = "FormGUImanager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GUI Manager"
+        Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.ContextMenuStrip2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -114,4 +176,11 @@ Partial Class FormGUImanager
     Friend WithEvents CHOutput As ColumnHeader
     Friend WithEvents CHStatus As ColumnHeader
     Friend WithEvents ButtonClose As Button
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
+    Friend WithEvents NewToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ButtonNew As Button
 End Class

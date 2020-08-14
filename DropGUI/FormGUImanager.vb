@@ -19,6 +19,14 @@ Public Class FormGUImanager
         Dim pt As New Point(446, 410)
         e.Graphics.DrawString("Copyright Martin Laflamme 2004/2020", f, br, pt)
     End Sub
+
+    Private Sub ListViewGUI_MouseClick(sender As Object, e As MouseEventArgs) Handles ListViewGUI.MouseClick
+        If e.Button = MouseButtons.Right Then
+            If ListViewGUI.SelectedItems.Count > 0 Then
+                ContextMenuStrip1.Show(ListViewGUI, e.Location)
+            End If
+        End If
+    End Sub
 #End Region
 
 #Region "Subroutines"
@@ -55,6 +63,10 @@ Public Class FormGUImanager
 
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
         Close()
+    End Sub
+
+    Private Sub ButtonNew_Click(sender As Object, e As EventArgs) Handles ButtonNew.Click
+        DialogNew.ShowDialog()
     End Sub
 #End Region
 End Class
