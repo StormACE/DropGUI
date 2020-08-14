@@ -10,3 +10,17 @@ C:\Users\krypt\OneDrive\Documents\Visual Studio 2019\Projects\DropGUI\DropGUI\Dr
 C:\Users\krypt\OneDrive\Documents\Visual Studio 2019\Projects\DropGUI\DropGUI\DropGUI\obj\x64\Release\DropGUI.exe
 C:\Users\krypt\OneDrive\Documents\Visual Studio 2019\Projects\DropGUI\DropGUI\DropGUI\obj\x64\Release\DropGUI.xml
 C:\Users\krypt\OneDrive\Documents\Visual Studio 2019\Projects\DropGUI\DropGUI\DropGUI\obj\x64\Release\DropGUI.pdb
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\bin\x64\Release\DropGUI.exe.config
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\bin\x64\Release\DropGUI.exe
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\bin\x64\Release\DropGUI.pdb
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\bin\x64\Release\DropGUI.xml
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.vbprojAssemblyReference.cache
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.FormMain.resources
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.FormGUI.resources
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.Resources.resources
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.vbproj.GenerateResource.cache
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.vbproj.CoreCompileInputs.cache
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.exe
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.xml
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.pdb
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.FormGUImanager.resources

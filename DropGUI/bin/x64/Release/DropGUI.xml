@@ -22,5 +22,11 @@ DropGUI
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:DropGUI.FormMain">
+ <summary>
+ DropGUI 4.0.0.2
+ Copyright Martin Laflamme 2003/2020
+ </summary>
+</member>
 </members>
 </doc>

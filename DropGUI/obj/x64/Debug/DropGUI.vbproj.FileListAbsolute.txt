@@ -1,0 +1,13 @@
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\bin\x64\Debug\DropGUI.exe.config
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\bin\x64\Debug\DropGUI.exe
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\bin\x64\Debug\DropGUI.pdb
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\bin\x64\Debug\DropGUI.xml
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Debug\DropGUI.vbprojAssemblyReference.cache
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Debug\DropGUI.FormMain.resources
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Debug\DropGUI.Resources.resources
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Debug\DropGUI.vbproj.GenerateResource.cache
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Debug\DropGUI.vbproj.CoreCompileInputs.cache
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Debug\DropGUI.exe
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Debug\DropGUI.xml
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Debug\DropGUI.pdb
+C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Debug\DropGUI.FormGUI.resources

@@ -96,6 +96,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormGUImanager.Designer.vb">
+      <DependentUpon>FormGUImanager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormGUImanager.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,12 @@
       <DependentUpon>Application.myapp</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="My Project\FormGUI.Designer.vb">
+      <DependentUpon>FormGUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\FormGUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,8 +133,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormGUImanager.resx">
+      <DependentUpon>FormGUImanager.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\FormGUI.resx">
+      <DependentUpon>FormGUI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
