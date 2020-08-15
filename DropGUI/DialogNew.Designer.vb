@@ -35,6 +35,7 @@ Partial Class DialogNew
         Me.ButtonBrowse = New System.Windows.Forms.Button()
         Me.ButtonNewEdit = New System.Windows.Forms.Button()
         Me.ButtonCancel = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -75,7 +76,7 @@ Partial Class DialogNew
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(53, 35)
+        Me.Label1.Location = New System.Drawing.Point(53, 38)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(46, 20)
         Me.Label1.TabIndex = 5
@@ -84,7 +85,7 @@ Partial Class DialogNew
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(296, 35)
+        Me.Label2.Location = New System.Drawing.Point(292, 38)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 20)
         Me.Label2.TabIndex = 6
@@ -144,6 +145,10 @@ Partial Class DialogNew
         Me.ButtonCancel.Text = "Cancel"
         Me.ButtonCancel.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'DialogNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -188,4 +193,5 @@ Partial Class DialogNew
     Friend WithEvents ButtonBrowse As Button
     Friend WithEvents ButtonNewEdit As Button
     Friend WithEvents ButtonCancel As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

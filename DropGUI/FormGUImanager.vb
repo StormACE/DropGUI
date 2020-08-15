@@ -41,19 +41,19 @@ Public Class FormGUImanager
 #Region "ContextMenu"
 
     Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
-        Dim Newdia As New DialogNew("", "", "", "", "", False)
+        Dim Newdia As New DialogNew("", "", "", "", "", False, ListViewGUI)
         Newdia.ShowDialog()
         Newdia.Dispose()
     End Sub
 
     Private Sub NewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem1.Click
-        Dim Newdia As New DialogNew("", "", "", "", "", False)
+        Dim Newdia As New DialogNew("", "", "", "", "", False, ListViewGUI)
         Newdia.ShowDialog()
         Newdia.Dispose()
     End Sub
 
     Private Sub NewToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem2.Click
-        Dim Newdia As New DialogNew("", "", "", "", "", False)
+        Dim Newdia As New DialogNew("", "", "", "", "", False, ListViewGUI)
         Newdia.ShowDialog()
         Newdia.Dispose()
     End Sub
@@ -151,7 +151,7 @@ Public Class FormGUImanager
         Dim Path As String = ListViewGUI.SelectedItems(0).SubItems(2).Text
         Dim Com As String = ListViewGUI.SelectedItems(0).SubItems(3).Text
         Dim output As String = ListViewGUI.SelectedItems(0).SubItems(4).Text
-        Dim Newdia As New DialogNew(Name, input, Path, Com, output, True)
+        Dim Newdia As New DialogNew(Name, input, Path, Com, output, True, ListViewGUI)
         Newdia.ShowDialog()
         Newdia.Dispose()
     End Sub
