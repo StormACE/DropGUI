@@ -42,14 +42,17 @@ Public Class FormGUImanager
 
     Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
         DialogNew.ShowDialog()
+        DialogNew.Dispose()
     End Sub
 
     Private Sub NewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem1.Click
         DialogNew.ShowDialog()
+        DialogNew.Dispose()
     End Sub
 
     Private Sub NewToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem2.Click
         DialogNew.ShowDialog()
+        DialogNew.Dispose()
     End Sub
 
     Private Sub ActivateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivateToolStripMenuItem.Click
