@@ -66,31 +66,39 @@ Public Class DialogNew
         'New Item
         If ed = False Then
             If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" Then
-                regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
-                If regKey Is Nothing Then
-                    regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI", True)
-                    regKey.CreateSubKey("GUIS")
-                    regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
-                End If
 
-                regKey.CreateSubKey(Name)
-                regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & Name, True)
-                regKey.SetValue("Command", Com)
-                regKey.SetValue("Input", Input)
-                regKey.SetValue("Output", Output)
-                regKey.SetValue("Path", Path)
-                regKey.SetValue("Status", 0)
-
+                'Check if item already exist
                 Dim Lvi As ListViewItem
-                Lvi = ListViewGUI.Items.Add(Name)
-                With Lvi
-                    .SubItems.Add(Input)
-                    .SubItems.Add(Path)
-                    .SubItems.Add(Com)
-                    .SubItems.Add(Output)
-                    .SubItems.Add("Deactivated")
-                End With
-                Close()
+                Lvi = ListviewGUI.FindItemWithText(Name)
+                If Lvi Is Nothing Then
+                    regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
+                    If regKey Is Nothing Then
+                        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI", True)
+                        regKey.CreateSubKey("GUIS")
+                        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
+                    End If
+
+                    regKey.CreateSubKey(Name)
+                    regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & Name, True)
+                    regKey.SetValue("Command", Com)
+                    regKey.SetValue("Input", Input)
+                    regKey.SetValue("Output", Output)
+                    regKey.SetValue("Path", Path)
+                    regKey.SetValue("Status", 0)
+
+
+                    Lvi = ListviewGUI.Items.Add(Name)
+                    With Lvi
+                        .SubItems.Add(Input)
+                        .SubItems.Add(Path)
+                        .SubItems.Add(Com)
+                        .SubItems.Add(Output)
+                        .SubItems.Add("Deactivated")
+                    End With
+                    Close()
+                Else
+                    MessageBox.Show("GUI Name already exist!")
+                End If
             Else
                 MessageBox.Show("You must fill all the cases")
             End If
@@ -113,8 +121,10 @@ Public Class DialogNew
                 Else
                     regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & ListviewGUI.SelectedItems(0).Text, True)
                     Dim Status As Integer = regKey.GetValue("Status")
+
                     regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
                     regKey.CreateSubKey(Name)
+
                     regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & Name, True)
                     regKey.SetValue("Command", Com)
                     regKey.SetValue("Input", Input)

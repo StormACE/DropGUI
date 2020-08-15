@@ -85,6 +85,22 @@ Public Class FormGUImanager
         LaunchEditDialogue()
     End Sub
 
+    Private Sub CloneToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles CloneToolStripMenuItem2.Click
+        CloneItem()
+    End Sub
+
+    Private Sub CloneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloneToolStripMenuItem.Click
+        CloneItem()
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+        DeleteItem()
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem1.Click
+        DeleteItem()
+    End Sub
+
 #End Region
 
 #Region "Buttons"
@@ -156,7 +172,40 @@ Public Class FormGUImanager
         Newdia.Dispose()
     End Sub
 
+    Private Sub CloneItem()
+        Dim Name As String = ListViewGUI.SelectedItems(0).Text
+        Dim input As String = ListViewGUI.SelectedItems(0).SubItems(1).Text
+        Dim Path As String = ListViewGUI.SelectedItems(0).SubItems(2).Text
+        Dim Com As String = ListViewGUI.SelectedItems(0).SubItems(3).Text
+        Dim output As String = ListViewGUI.SelectedItems(0).SubItems(4).Text
 
+        'Add to listview
+        Dim Lvi As ListViewItem
+        Lvi = ListViewGUI.Items.Add(Name & " (Clone)")
+        With Lvi
+            .SubItems.Add(input)
+            .SubItems.Add(Path)
+            .SubItems.Add(Com)
+            .SubItems.Add(output)
+            .SubItems.Add("Deactivated")
+        End With
+
+        'Create reg key
+        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
+        regKey.CreateSubKey(Name & " (Clone)")
+        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & Name & " (Clone)", True)
+        regKey.SetValue("Command", Com)
+        regKey.SetValue("Input", input)
+        regKey.SetValue("Output", output)
+        regKey.SetValue("Path", Path)
+        regKey.SetValue("Status", 0)
+    End Sub
+
+    Private Sub DeleteItem()
+        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
+        regKey.DeleteSubKey(ListViewGUI.SelectedItems(0).Text)
+        ListViewGUI.SelectedItems(0).Remove()
+    End Sub
 
 #End Region
 
