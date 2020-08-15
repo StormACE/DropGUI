@@ -33,13 +33,26 @@ Partial Class FormGUImanager
         Me.CHStatus = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ButtonClose = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ActivateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.NewToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip3 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DeactivateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.NewToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CloneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.DeleteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
+        Me.ContextMenuStrip3.SuspendLayout()
         Me.SuspendLayout()
         '
         'ListViewGUI
@@ -99,26 +112,48 @@ Partial Class FormGUImanager
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActivateToolStripMenuItem, Me.ToolStripSeparator1, Me.NewToolStripMenuItem, Me.EditToolStripMenuItem, Me.ToolStripMenuItem2, Me.ToolStripSeparator2, Me.DeleteToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(135, 100)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(148, 176)
+        '
+        'ActivateToolStripMenuItem
+        '
+        Me.ActivateToolStripMenuItem.Name = "ActivateToolStripMenuItem"
+        Me.ActivateToolStripMenuItem.Size = New System.Drawing.Size(147, 32)
+        Me.ActivateToolStripMenuItem.Text = "Activate"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(144, 6)
         '
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(147, 32)
         Me.NewToolStripMenuItem.Text = "New"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(147, 32)
         Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(147, 32)
+        Me.ToolStripMenuItem2.Text = "Clone"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(144, 6)
         '
         'DeleteToolStripMenuItem
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(147, 32)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'ContextMenuStrip2
@@ -126,13 +161,60 @@ Partial Class FormGUImanager
         Me.ContextMenuStrip2.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem1})
         Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(241, 69)
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(120, 36)
         '
         'NewToolStripMenuItem1
         '
         Me.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1"
-        Me.NewToolStripMenuItem1.Size = New System.Drawing.Size(240, 32)
+        Me.NewToolStripMenuItem1.Size = New System.Drawing.Size(119, 32)
         Me.NewToolStripMenuItem1.Text = "New"
+        '
+        'ContextMenuStrip3
+        '
+        Me.ContextMenuStrip3.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeactivateToolStripMenuItem, Me.ToolStripSeparator3, Me.NewToolStripMenuItem2, Me.EditToolStripMenuItem1, Me.CloneToolStripMenuItem, Me.ToolStripSeparator4, Me.DeleteToolStripMenuItem1})
+        Me.ContextMenuStrip3.Name = "ContextMenuStrip3"
+        Me.ContextMenuStrip3.Size = New System.Drawing.Size(241, 209)
+        '
+        'DeactivateToolStripMenuItem
+        '
+        Me.DeactivateToolStripMenuItem.Name = "DeactivateToolStripMenuItem"
+        Me.DeactivateToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
+        Me.DeactivateToolStripMenuItem.Text = "Deactivate"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(237, 6)
+        '
+        'NewToolStripMenuItem2
+        '
+        Me.NewToolStripMenuItem2.Name = "NewToolStripMenuItem2"
+        Me.NewToolStripMenuItem2.Size = New System.Drawing.Size(240, 32)
+        Me.NewToolStripMenuItem2.Text = "New"
+        '
+        'EditToolStripMenuItem1
+        '
+        Me.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1"
+        Me.EditToolStripMenuItem1.Size = New System.Drawing.Size(240, 32)
+        Me.EditToolStripMenuItem1.Text = "Edit"
+        '
+        'CloneToolStripMenuItem
+        '
+        Me.CloneToolStripMenuItem.Name = "CloneToolStripMenuItem"
+        Me.CloneToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
+        Me.CloneToolStripMenuItem.Text = "Clone"
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(237, 6)
+        '
+        'DeleteToolStripMenuItem1
+        '
+        Me.DeleteToolStripMenuItem1.Name = "DeleteToolStripMenuItem1"
+        Me.DeleteToolStripMenuItem1.Size = New System.Drawing.Size(240, 32)
+        Me.DeleteToolStripMenuItem1.Text = "Delete"
         '
         'FormGUImanager
         '
@@ -151,6 +233,7 @@ Partial Class FormGUImanager
         Me.Text = "GUI Manager"
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ContextMenuStrip2.ResumeLayout(False)
+        Me.ContextMenuStrip3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -169,4 +252,16 @@ Partial Class FormGUImanager
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents NewToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ActivateToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
+    Friend WithEvents DeactivateToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents NewToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CloneToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents DeleteToolStripMenuItem1 As ToolStripMenuItem
 End Class

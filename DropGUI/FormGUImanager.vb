@@ -24,7 +24,13 @@ Public Class FormGUImanager
 
         If e.Button = MouseButtons.Right Then
             If ListViewGUI.SelectedItems.Count > 0 Then
-                ContextMenuStrip1.Show(ListViewGUI, e.Location)
+                Dim status As String = ListViewGUI.SelectedItems(0).SubItems(5).Text
+                If status = "Activated" Then
+                    ContextMenuStrip3.Show(ListViewGUI, e.Location)
+                Else
+                    ContextMenuStrip1.Show(ListViewGUI, e.Location)
+                End If
+
             Else
                 ContextMenuStrip2.Show(ListViewGUI, e.Location)
             End If
@@ -40,6 +46,28 @@ Public Class FormGUImanager
 
     Private Sub NewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem1.Click
         DialogNew.ShowDialog()
+    End Sub
+
+    Private Sub NewToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem2.Click
+        DialogNew.ShowDialog()
+    End Sub
+
+    Private Sub ActivateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivateToolStripMenuItem.Click
+        Dim GUIName As String = ListViewGUI.SelectedItems(0).Text
+        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & GUIName, True)
+        If regKey IsNot Nothing Then
+            regKey.SetValue("Status", 1)
+            ListViewGUI.SelectedItems(0).SubItems(5).Text = "Activated"
+        End If
+    End Sub
+
+    Private Sub DeactivateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeactivateToolStripMenuItem.Click
+        Dim GUIName As String = ListViewGUI.SelectedItems(0).Text
+        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & GUIName, True)
+        If regKey IsNot Nothing Then
+            regKey.SetValue("Status", 0)
+            ListViewGUI.SelectedItems(0).SubItems(5).Text = "Deactivated"
+        End If
     End Sub
 
 #End Region
@@ -84,8 +112,9 @@ Public Class FormGUImanager
         End If
     End Sub
 
-
-
-
 #End Region
+
+
+
+
 End Class
