@@ -41,18 +41,21 @@ Public Class FormGUImanager
 #Region "ContextMenu"
 
     Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
-        DialogNew.ShowDialog()
-        DialogNew.Dispose()
+        Dim Newdia As New DialogNew("", "", "", "", "", False)
+        Newdia.ShowDialog()
+        Newdia.Dispose()
     End Sub
 
     Private Sub NewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem1.Click
-        DialogNew.ShowDialog()
-        DialogNew.Dispose()
+        Dim Newdia As New DialogNew("", "", "", "", "", False)
+        Newdia.ShowDialog()
+        Newdia.Dispose()
     End Sub
 
     Private Sub NewToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem2.Click
-        DialogNew.ShowDialog()
-        DialogNew.Dispose()
+        Dim Newdia As New DialogNew("", "", "", "", "", False)
+        Newdia.ShowDialog()
+        Newdia.Dispose()
     End Sub
 
     Private Sub ActivateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivateToolStripMenuItem.Click
@@ -72,6 +75,14 @@ Public Class FormGUImanager
             regKey.SetValue("Status", 0)
             ListViewGUI.SelectedItems(0).SubItems(5).Text = "Deactivated"
         End If
+    End Sub
+
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+        LaunchEditDialogue()
+    End Sub
+
+    Private Sub EditToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem1.Click
+        LaunchEditDialogue()
     End Sub
 
 #End Region
@@ -133,6 +144,19 @@ Public Class FormGUImanager
             Next
         End If
     End Sub
+
+    Private Sub LaunchEditDialogue()
+        Dim Name As String = ListViewGUI.SelectedItems(0).Text
+        Dim input As String = ListViewGUI.SelectedItems(0).SubItems(1).Text
+        Dim Path As String = ListViewGUI.SelectedItems(0).SubItems(2).Text
+        Dim Com As String = ListViewGUI.SelectedItems(0).SubItems(3).Text
+        Dim output As String = ListViewGUI.SelectedItems(0).SubItems(4).Text
+        Dim Newdia As New DialogNew(Name, input, Path, Com, output, True)
+        Newdia.ShowDialog()
+        Newdia.Dispose()
+    End Sub
+
+
 
 #End Region
 

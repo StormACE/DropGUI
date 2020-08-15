@@ -119,41 +119,41 @@ Partial Class FormGUImanager
         'ActivateToolStripMenuItem
         '
         Me.ActivateToolStripMenuItem.Name = "ActivateToolStripMenuItem"
-        Me.ActivateToolStripMenuItem.Size = New System.Drawing.Size(147, 32)
+        Me.ActivateToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.ActivateToolStripMenuItem.Text = "Activate"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(144, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(237, 6)
         '
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(147, 32)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.NewToolStripMenuItem.Text = "New"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(147, 32)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(147, 32)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(240, 32)
         Me.ToolStripMenuItem2.Text = "Clone"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(144, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(237, 6)
         '
         'DeleteToolStripMenuItem
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(147, 32)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'ContextMenuStrip2
@@ -179,18 +179,18 @@ Partial Class FormGUImanager
         'DeactivateToolStripMenuItem
         '
         Me.DeactivateToolStripMenuItem.Name = "DeactivateToolStripMenuItem"
-        Me.DeactivateToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
+        Me.DeactivateToolStripMenuItem.Size = New System.Drawing.Size(166, 32)
         Me.DeactivateToolStripMenuItem.Text = "Deactivate"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(237, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(163, 6)
         '
         'NewToolStripMenuItem2
         '
         Me.NewToolStripMenuItem2.Name = "NewToolStripMenuItem2"
-        Me.NewToolStripMenuItem2.Size = New System.Drawing.Size(240, 32)
+        Me.NewToolStripMenuItem2.Size = New System.Drawing.Size(166, 32)
         Me.NewToolStripMenuItem2.Text = "New"
         '
         'EditToolStripMenuItem1
@@ -202,18 +202,18 @@ Partial Class FormGUImanager
         'CloneToolStripMenuItem
         '
         Me.CloneToolStripMenuItem.Name = "CloneToolStripMenuItem"
-        Me.CloneToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
+        Me.CloneToolStripMenuItem.Size = New System.Drawing.Size(166, 32)
         Me.CloneToolStripMenuItem.Text = "Clone"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(237, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(163, 6)
         '
         'DeleteToolStripMenuItem1
         '
         Me.DeleteToolStripMenuItem1.Name = "DeleteToolStripMenuItem1"
-        Me.DeleteToolStripMenuItem1.Size = New System.Drawing.Size(240, 32)
+        Me.DeleteToolStripMenuItem1.Size = New System.Drawing.Size(166, 32)
         Me.DeleteToolStripMenuItem1.Text = "Delete"
         '
         'FormGUImanager
