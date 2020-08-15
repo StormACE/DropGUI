@@ -58,6 +58,7 @@ Public Class FormGUImanager
         If regKey IsNot Nothing Then
             regKey.SetValue("Status", 1)
             ListViewGUI.SelectedItems(0).SubItems(5).Text = "Activated"
+            DeactivateAll(GUIName)
         End If
     End Sub
 
@@ -108,6 +109,24 @@ Public Class FormGUImanager
                     .SubItems.Add(output)
                     .SubItems.Add(stat)
                 End With
+            Next
+        End If
+    End Sub
+
+    'Deactivate all same input extention when one is activated
+    Private Sub DeactivateAll(GUIName As String)
+        Dim x As Integer = 0
+        Dim input As String = ListViewGUI.SelectedItems(0).SubItems(1).Text
+        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
+        If regKey IsNot Nothing Then
+            For Each Name As String In regKey.GetSubKeyNames
+                regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & Name, True)
+                Dim input2 As String = regKey.GetValue("Input")
+                If input = input2 And Name <> GUIName Then
+                    regKey.SetValue("Status", 0)
+                    ListViewGUI.Items(x).SubItems(5).Text = "Deactivated"
+                End If
+                x += 1
             Next
         End If
     End Sub
