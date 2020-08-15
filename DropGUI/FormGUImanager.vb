@@ -20,13 +20,36 @@ Public Class FormGUImanager
         e.Graphics.DrawString("Copyright Martin Laflamme 2004/2020", f, br, pt)
     End Sub
 
-    Private Sub ListViewGUI_MouseClick(sender As Object, e As MouseEventArgs) Handles ListViewGUI.MouseClick
+    Private Sub ListViewGUI_MouseUp(sender As Object, e As MouseEventArgs) Handles ListViewGUI.MouseUp
+
         If e.Button = MouseButtons.Right Then
             If ListViewGUI.SelectedItems.Count > 0 Then
                 ContextMenuStrip1.Show(ListViewGUI, e.Location)
+            Else
+                ContextMenuStrip2.Show(ListViewGUI, e.Location)
             End If
         End If
     End Sub
+#End Region
+
+#Region "ContextMenu"
+
+    Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+        DialogNew.ShowDialog()
+    End Sub
+
+    Private Sub NewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem1.Click
+        DialogNew.ShowDialog()
+    End Sub
+
+#End Region
+
+#Region "Buttons"
+
+    Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
+        Close()
+    End Sub
+
 #End Region
 
 #Region "Subroutines"
@@ -61,12 +84,8 @@ Public Class FormGUImanager
         End If
     End Sub
 
-    Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
-        Close()
-    End Sub
 
-    Private Sub ButtonNew_Click(sender As Object, e As EventArgs) Handles ButtonNew.Click
-        DialogNew.ShowDialog()
-    End Sub
+
+
 #End Region
 End Class

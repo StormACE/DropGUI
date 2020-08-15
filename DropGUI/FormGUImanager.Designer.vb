@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormGUImanager
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormGUImanager
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormGUImanager))
@@ -38,7 +38,6 @@ Partial Class FormGUImanager
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.NewToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ButtonNew = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.SuspendLayout()
@@ -107,19 +106,19 @@ Partial Class FormGUImanager
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(134, 32)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.NewToolStripMenuItem.Text = "New"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(134, 32)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'DeleteToolStripMenuItem
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(134, 32)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'ContextMenuStrip2
@@ -127,24 +126,13 @@ Partial Class FormGUImanager
         Me.ContextMenuStrip2.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem1})
         Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(120, 36)
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(241, 69)
         '
         'NewToolStripMenuItem1
         '
         Me.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1"
-        Me.NewToolStripMenuItem1.Size = New System.Drawing.Size(119, 32)
+        Me.NewToolStripMenuItem1.Size = New System.Drawing.Size(240, 32)
         Me.NewToolStripMenuItem1.Text = "New"
-        '
-        'ButtonNew
-        '
-        Me.ButtonNew.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ButtonNew.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.ButtonNew.Location = New System.Drawing.Point(593, 496)
-        Me.ButtonNew.Name = "ButtonNew"
-        Me.ButtonNew.Size = New System.Drawing.Size(75, 36)
-        Me.ButtonNew.TabIndex = 3
-        Me.ButtonNew.Text = "New"
-        Me.ButtonNew.UseVisualStyleBackColor = False
         '
         'FormGUImanager
         '
@@ -153,7 +141,6 @@ Partial Class FormGUImanager
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(778, 544)
-        Me.Controls.Add(Me.ButtonNew)
         Me.Controls.Add(Me.ButtonClose)
         Me.Controls.Add(Me.ListViewGUI)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -182,5 +169,4 @@ Partial Class FormGUImanager
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents NewToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ButtonNew As Button
 End Class
