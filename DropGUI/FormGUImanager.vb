@@ -36,6 +36,12 @@ Public Class FormGUImanager
             End If
         End If
     End Sub
+
+    Private Sub ListViewGUI_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles ListViewGUI.MouseDoubleClick
+        If e.Button = MouseButtons.Left Then
+            LaunchEditDialogue()
+        End If
+    End Sub
 #End Region
 
 #Region "ContextMenu"
