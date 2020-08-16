@@ -73,6 +73,71 @@ Public Class FormMain
     Private Sub FormMain_FormClosing(ByVal sender As System.Object, ByVal e As FormClosingEventArgs) Handles MyBase.FormClosing
         SaveWinSize()
     End Sub
+
+    Private Sub FormMain_DragDrop(sender As System.Object, e As System.Windows.Forms.DragEventArgs) Handles MyBase.DragDrop
+        Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
+        Dim match As Boolean = False
+        Dim GUIName As String = ""
+        Dim Outputfile As String = ""
+        For Each path As String In files
+            Dim ext As String = IO.Path.GetExtension(path)
+            Dim Filename As String = IO.Path.GetFileNameWithoutExtension(path)
+            regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
+            If regKey IsNot Nothing Then
+                For Each Name As String In regKey.GetSubKeyNames
+                    regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & Name, True)
+                    Dim Input As String = regKey.GetValue("Input")
+                    Dim Activate As Integer = regKey.GetValue("Status")
+                    If "." & Input = ext And Activate = 1 Then
+                        match = True
+                        GUIName = Name
+                    End If
+                Next
+
+                'We got a Match !!!
+                If match = True Then
+                    regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & GUIName, True)
+                    Dim Output As String = regKey.GetValue("Output")
+                    Dim ProgramPath As String = regKey.GetValue("Path")
+                    Dim Command As String = regKey.GetValue("Command")
+
+                    Dim Pos As Integer = InStr(1, Command, "/@in", CompareMethod.Text)
+                    If Pos <> 0 Then
+                        Do
+                            Command = Command.Replace("/@in", path)
+                            Pos = InStr(1, Command, "/@in", CompareMethod.Text)
+                        Loop Until Pos = 0
+
+                        Pos = InStr(1, Command, "/@out", CompareMethod.Text)
+                        If OutputPath <> "" Then
+                            Outputfile = OutputPath & Filename & "." & Output
+                            Do
+                                Command = Command.Replace("/@out", Outputfile)
+                                Pos = InStr(1, Command, "/@out", CompareMethod.Text)
+                            Loop Until Pos = 0
+                        Else
+                            MsgBox("Output Folder not selected")
+                        End If
+
+
+                    Else
+                        MsgBox("Pointer /@in must be use in your command")
+                    End If
+
+                    MsgBox(Command)
+                Else
+                    MsgBox("GUI doesnt exist")
+                End If
+
+            End If
+        Next
+    End Sub
+
+    Private Sub FormMain_DragEnter(sender As System.Object, e As System.Windows.Forms.DragEventArgs) Handles MyBase.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Copy
+        End If
+    End Sub
 #End Region
 
 #Region "ContextMenu"
