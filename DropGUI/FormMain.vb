@@ -10,6 +10,7 @@ Public Class FormMain
 #Region "Declarations"
     'Use for registry
     Private regKey As RegistryKey
+
     Private OutputPath As String = ""
     Private Debug As Integer = 0
 #End Region
@@ -18,15 +19,15 @@ Public Class FormMain
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Text = "DropGUI 4.0"
         MinimumSize = New Drawing.Size(300, 300)
-        CenterToScreen()
 
-
-        'Is Starting size exist in reg
+        'Is Starting size and location exist in reg
         regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\Settings\WinSize", True)
         If regKey IsNot Nothing Then
             Me.Size = New Size(CInt(regKey.GetValue("Width", "300")), CInt(regKey.GetValue("Height", "300")))
+            Location = New Point(regKey.GetValue("X"), regKey.GetValue("Y"))
         Else
             Me.Size = New Size(300, 300)
+            CenterToScreen()
         End If
 
         'Check Output Path and create reg key
@@ -202,6 +203,8 @@ Public Class FormMain
         End If
         regKey.SetValue("Height", Height)
         regKey.SetValue("Width", Width)
+        regKey.SetValue("X", Location.X)
+        regKey.SetValue("Y", Location.Y)
     End Sub
 
     Private Sub LaunchApp(ProgramPath As String, Command As String)
