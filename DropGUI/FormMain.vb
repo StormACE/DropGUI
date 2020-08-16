@@ -11,6 +11,7 @@ Public Class FormMain
     'Use for registry
     Private regKey As RegistryKey
     Private OutputPath As String = ""
+    Private Debug As Integer = 0
 #End Region
 
 #Region "Methods"
@@ -59,7 +60,17 @@ Public Class FormMain
             BackgroundImage = Image.FromFile(regKey.GetValue(""))
         End If
 
-        'MessageBox.Show(OutputPath)
+        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\Settings\Debug", True)
+        If regKey IsNot Nothing Then
+            Debug = regKey.GetValue("")
+            If Debug = 1 Then
+                ShowDebugMessageToolStripMenuItem.Checked = True
+            Else
+                ShowDebugMessageToolStripMenuItem.Checked = False
+            End If
+        Else
+            Debug = 0
+        End If
     End Sub
 
     Private Sub FormMain_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
@@ -124,7 +135,9 @@ Public Class FormMain
                         MsgBox("Pointer /@in must be use in your command")
                     End If
 
-                    MsgBox(Command, MsgBoxStyle.Information, ProgramPath)
+                    If Debug = 1 Then
+                        MsgBox(Command, MsgBoxStyle.Information, ProgramPath)
+                    End If
 
                     LaunchApp(ProgramPath, Command)
 
@@ -201,6 +214,30 @@ Public Class FormMain
         Dim App As Process = Process.Start(info)
         App.WaitForExit()
         MsgBox("Job Completed")
+    End Sub
+
+    Private Sub ShowDebugMessageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowDebugMessageToolStripMenuItem.Click
+        If ShowDebugMessageToolStripMenuItem.Checked = False Then
+            ShowDebugMessageToolStripMenuItem.Checked = True
+            regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\Settings\Debug", True)
+            If regKey Is Nothing Then
+                regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\Settings", True)
+                regKey.CreateSubKey("Debug")
+            End If
+            regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\Settings\Debug", True)
+            regKey.SetValue("", 1)
+            Debug = 1
+        Else
+            ShowDebugMessageToolStripMenuItem.Checked = False
+            regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\Settings\Debug", True)
+            If regKey Is Nothing Then
+                regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\Settings", True)
+                regKey.CreateSubKey("Debug")
+            End If
+            regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\Settings\Debug", True)
+            regKey.SetValue("", 0)
+            Debug = 0
+        End If
     End Sub
 
 #End Region

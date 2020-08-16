@@ -43,7 +43,7 @@ Partial Class FormMain
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SelectDestinationToolStripMenuItem, Me.SelectBackImageToolStripMenuItem, Me.ToolStripSeparator1, Me.ShowDebugMessageToolStripMenuItem, Me.ToolStripSeparator2, Me.GUIManagerToolStripMenuItem, Me.ToolStripSeparator3, Me.CloseToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(286, 182)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(286, 215)
         '
         'SelectDestinationToolStripMenuItem
         '
