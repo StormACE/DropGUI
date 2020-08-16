@@ -174,7 +174,7 @@ Partial Class FormGUImanager
         Me.ContextMenuStrip3.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeactivateToolStripMenuItem, Me.ToolStripSeparator3, Me.NewToolStripMenuItem2, Me.EditToolStripMenuItem1, Me.CloneToolStripMenuItem, Me.ToolStripSeparator4, Me.DeleteToolStripMenuItem1})
         Me.ContextMenuStrip3.Name = "ContextMenuStrip3"
-        Me.ContextMenuStrip3.Size = New System.Drawing.Size(241, 209)
+        Me.ContextMenuStrip3.Size = New System.Drawing.Size(167, 176)
         '
         'DeactivateToolStripMenuItem
         '
@@ -213,7 +213,7 @@ Partial Class FormGUImanager
         'DeleteToolStripMenuItem1
         '
         Me.DeleteToolStripMenuItem1.Name = "DeleteToolStripMenuItem1"
-        Me.DeleteToolStripMenuItem1.Size = New System.Drawing.Size(240, 32)
+        Me.DeleteToolStripMenuItem1.Size = New System.Drawing.Size(166, 32)
         Me.DeleteToolStripMenuItem1.Text = "Delete"
         '
         'FormGUImanager
@@ -227,6 +227,7 @@ Partial Class FormGUImanager
         Me.Controls.Add(Me.ListViewGUI)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FormGUImanager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -23,6 +23,7 @@ Partial Class FormMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMain))
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SelectDestinationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SelectBackImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,7 +43,7 @@ Partial Class FormMain
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SelectDestinationToolStripMenuItem, Me.SelectBackImageToolStripMenuItem, Me.ToolStripSeparator1, Me.ShowDebugMessageToolStripMenuItem, Me.ToolStripSeparator2, Me.GUIManagerToolStripMenuItem, Me.ToolStripSeparator3, Me.CloseToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(286, 215)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(286, 182)
         '
         'SelectDestinationToolStripMenuItem
         '
@@ -100,6 +101,7 @@ Partial Class FormMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(480, 426)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FormMain"
         Me.Text = "DropGUI 4.0"
