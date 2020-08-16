@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.Win32
 ''' <summary>
-''' DropGUI 4.0.0.3
-''' 12 Aout 2020 to 15 Aout 2020
+''' DropGUI 4.0.0.4
+''' 12 Aout 2020 to 16 Aout 2020
 ''' Copyright Martin Laflamme 2003/2020
 ''' </summary>
 
@@ -104,7 +104,7 @@ Public Class FormMain
                     Dim Pos As Integer = InStr(1, Command, "/@in", CompareMethod.Text)
                     If Pos <> 0 Then
                         Do
-                            Command = Command.Replace("/@in", path)
+                            Command = Command.Replace("/@in", """" & path & """")
                             Pos = InStr(1, Command, "/@in", CompareMethod.Text)
                         Loop Until Pos = 0
 
@@ -112,7 +112,7 @@ Public Class FormMain
                         If OutputPath <> "" Then
                             Outputfile = OutputPath & Filename & "." & Output
                             Do
-                                Command = Command.Replace("/@out", Outputfile)
+                                Command = Command.Replace("/@out", """" & Outputfile & """")
                                 Pos = InStr(1, Command, "/@out", CompareMethod.Text)
                             Loop Until Pos = 0
                         Else
@@ -124,7 +124,10 @@ Public Class FormMain
                         MsgBox("Pointer /@in must be use in your command")
                     End If
 
-                    MsgBox(Command)
+                    MsgBox(Command, MsgBoxStyle.Information, ProgramPath)
+
+                    LaunchApp(ProgramPath, Command)
+
                 Else
                     MsgBox("GUI doesnt exist")
                 End If
@@ -171,6 +174,10 @@ Public Class FormMain
             regKey.SetValue("", OpenFileDialog1.FileName)
         End If
     End Sub
+
+    Private Sub GUIManagerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GUIManagerToolStripMenuItem.Click
+        FormGUImanager.Show()
+    End Sub
 #End Region
 
 #Region "Subroutines"
@@ -184,9 +191,18 @@ Public Class FormMain
         regKey.SetValue("Width", Width)
     End Sub
 
-    Private Sub GUIManagerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GUIManagerToolStripMenuItem.Click
-        FormGUImanager.Show()
+    Private Sub LaunchApp(ProgramPath As String, Command As String)
+        Dim info As New ProcessStartInfo
+        info.FileName = ProgramPath
+        info.Arguments = Command
+        info.CreateNoWindow = False
+        info.WindowStyle = ProcessWindowStyle.Normal
+
+        Dim App As Process = Process.Start(info)
+        App.WaitForExit()
+        MsgBox("Job Completed")
     End Sub
+
 #End Region
 
 End Class
