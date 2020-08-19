@@ -35,6 +35,7 @@ Partial Class FormMain
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -43,7 +44,7 @@ Partial Class FormMain
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SelectDestinationToolStripMenuItem, Me.SelectBackImageToolStripMenuItem, Me.ToolStripSeparator1, Me.ShowDebugMessageToolStripMenuItem, Me.ToolStripSeparator2, Me.GUIManagerToolStripMenuItem, Me.ToolStripSeparator3, Me.CloseToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(286, 215)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(286, 182)
         '
         'SelectDestinationToolStripMenuItem
         '
@@ -94,6 +95,13 @@ Partial Class FormMain
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(12, 376)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(456, 38)
+        Me.ProgressBar1.TabIndex = 1
+        '
         'FormMain
         '
         Me.AllowDrop = True
@@ -101,6 +109,7 @@ Partial Class FormMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(480, 426)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FormMain"
@@ -122,4 +131,5 @@ Partial Class FormMain
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SelectBackImageToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents ProgressBar1 As ProgressBar
 End Class

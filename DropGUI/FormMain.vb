@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.Win32
 ''' <summary>
-''' DropGUI 4.0.0.4
-''' 12 Aout 2020 to 16 Aout 2020
+''' DropGUI 4.0.0.5
+''' 12 Aout 2020 to 19 Aout 2020
 ''' Copyright Martin Laflamme 2003/2020
 ''' </summary>
 
@@ -91,6 +91,9 @@ Public Class FormMain
         Dim match As Boolean = False
         Dim GUIName As String = ""
         Dim Outputfile As String = ""
+        Dim Fcount As Integer = files.Count
+        Dim x As Integer = 0
+        ProgressBar1.Maximum = Fcount
         For Each path As String In files
             Dim ext As String = IO.Path.GetExtension(path)
             Dim Filename As String = IO.Path.GetFileNameWithoutExtension(path)
@@ -108,6 +111,8 @@ Public Class FormMain
 
                 'We got a Match !!!
                 If match = True Then
+                    x += 1
+                    ProgressBar1.Value = x
                     regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & GUIName, True)
                     Dim Output As String = regKey.GetValue("Output")
                     Dim ProgramPath As String = regKey.GetValue("Path")
@@ -142,6 +147,11 @@ Public Class FormMain
 
                     LaunchApp(ProgramPath, Command)
 
+                    If x = Fcount Then
+                        MsgBox("Job Completed")
+                        ProgressBar1.Value = 0
+                    End If
+
                 Else
                     MsgBox("GUI doesnt exist")
                 End If
@@ -154,6 +164,11 @@ Public Class FormMain
         If e.Data.GetDataPresent(DataFormats.FileDrop) Then
             e.Effect = DragDropEffects.Copy
         End If
+    End Sub
+
+    Private Sub FormMain_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        ProgressBar1.Width = Width - 32
+        ProgressBar1.Top = Height - 75
     End Sub
 #End Region
 
@@ -216,7 +231,6 @@ Public Class FormMain
 
         Dim App As Process = Process.Start(info)
         App.WaitForExit()
-        MsgBox("Job Completed")
     End Sub
 
     Private Sub ShowDebugMessageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowDebugMessageToolStripMenuItem.Click
