@@ -59,15 +59,18 @@ Partial Class FormGUImanager
         '
         'ListViewGUI
         '
+        Me.ListViewGUI.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListViewGUI.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.CHName, Me.CHEntree, Me.CHPath, Me.CHCommand, Me.CHOutput, Me.CHStatus})
         Me.ListViewGUI.ForeColor = System.Drawing.Color.MidnightBlue
         Me.ListViewGUI.FullRowSelect = True
         Me.ListViewGUI.GridLines = True
         Me.ListViewGUI.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListViewGUI.HideSelection = False
+        Me.ListViewGUI.HoverSelection = True
         Me.ListViewGUI.Location = New System.Drawing.Point(30, 30)
         Me.ListViewGUI.MultiSelect = False
         Me.ListViewGUI.Name = "ListViewGUI"
+        Me.ListViewGUI.ShowItemToolTips = True
         Me.ListViewGUI.Size = New System.Drawing.Size(719, 379)
         Me.ListViewGUI.TabIndex = 0
         Me.ListViewGUI.UseCompatibleStateImageBehavior = False
