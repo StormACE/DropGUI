@@ -17,9 +17,11 @@ Public Class FormGUImanager
 
     Private Sub Form1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles MyBase.Paint
         Dim f As New Font("Comic Sans Ms", 12, FontStyle.Italic)
-        Dim br As New SolidBrush(Color.BlueViolet)
+        Dim br As New SolidBrush(Color.DarkBlue)
         Dim pt As New Point(446, 410)
         e.Graphics.DrawString("Copyright Martin Laflamme 2004/2020", f, br, pt)
+        pt = New Point(446, 430)
+        e.Graphics.DrawString("Version: " & Application.ProductVersion, f, br, pt)
     End Sub
 
     Private Sub ListViewGUI_MouseUp(sender As Object, e As MouseEventArgs) Handles ListViewGUI.MouseUp
@@ -126,58 +128,61 @@ Public Class FormGUImanager
 
 
         Dim regKeyGUIs As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
-        Dim KeyGUICount As Integer = regKeyGUIs.SubKeyCount()
-        If KeyGUICount > 0 Then
-            Dim sb As New StringBuilder()
-            sb.AppendLine("Windows Registry Editor Version 5.00")
-            sb.AppendLine()
-            If regKeyGUIs IsNot Nothing Then
-                For Each KeyGUI As String In regKeyGUIs.GetSubKeyNames()
-                    Dim regKeyGUI As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & KeyGUI, True)
-                    If regKeyGUI IsNot Nothing Then
-                        Dim Command As String = CType(regKeyGUI.GetValue("Command"), String)
-                        Dim Input As String = CType(regKeyGUI.GetValue("Input"), String)
-                        Dim Output As String = CType(regKeyGUI.GetValue("Output"), String)
-                        Dim Path As String = CType(regKeyGUI.GetValue("Path"), String)
+        If regKeyGUIs IsNot Nothing Then
+            Dim KeyGUICount As Integer = regKeyGUIs.SubKeyCount()
+            If KeyGUICount > 0 Then
+                Dim sb As New StringBuilder()
+                sb.AppendLine("Windows Registry Editor Version 5.00")
+                sb.AppendLine()
+                If regKeyGUIs IsNot Nothing Then
+                    For Each KeyGUI As String In regKeyGUIs.GetSubKeyNames()
+                        Dim regKeyGUI As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & KeyGUI, True)
+                        If regKeyGUI IsNot Nothing Then
+                            Dim Command As String = CType(regKeyGUI.GetValue("Command"), String)
+                            Dim Input As String = CType(regKeyGUI.GetValue("Input"), String)
+                            Dim Output As String = CType(regKeyGUI.GetValue("Output"), String)
+                            Dim Path As String = CType(regKeyGUI.GetValue("Path"), String)
 
-                        'replace "\" by "\\" in path
-                        If Path <> "" Then
-                            Dim Pos As Integer = InStr(1, Path, "\", CompareMethod.Text)
-                            If Pos <> 0 Then
-                                Do
-                                    Path = Path.Insert(Pos, "\")
-                                    If Pos < Path.Length Then
-                                        Pos = InStr(Pos + 2, Path, "\", CompareMethod.Text)
-                                    Else
-                                        Pos = 0
-                                    End If
-                                Loop Until Pos = 0
+                            'replace "\" by "\\" in path
+                            If Path <> "" Then
+                                Dim Pos As Integer = InStr(1, Path, "\", CompareMethod.Text)
+                                If Pos <> 0 Then
+                                    Do
+                                        Path = Path.Insert(Pos, "\")
+                                        If Pos < Path.Length Then
+                                            Pos = InStr(Pos + 2, Path, "\", CompareMethod.Text)
+                                        Else
+                                            Pos = 0
+                                        End If
+                                    Loop Until Pos = 0
+                                End If
                             End If
+
+
+                            Dim Status As Integer = CType(regKeyGUI.GetValue("Status"), Integer)
+                            sb.AppendLine("[HKEY_CURRENT_USER\Software\DropGUI\GUIS\" & KeyGUI & "]")
+                            sb.AppendLine(Chr(34) & "Command" & Chr(34) & "=" & Chr(34) & Command & Chr(34))
+                            sb.AppendLine(Chr(34) & "Input" & Chr(34) & "=" & Chr(34) & Input & Chr(34))
+                            sb.AppendLine(Chr(34) & "Output" & Chr(34) & "=" & Chr(34) & Output & Chr(34))
+                            sb.AppendLine(Chr(34) & "Path" & Chr(34) & "=" & Chr(34) & Path & Chr(34))
+                            sb.AppendLine(Chr(34) & "Status" & Chr(34) & "=dword:" & Status)
+                            sb.AppendLine()
                         End If
+                    Next
 
-
-                        Dim Status As Integer = CType(regKeyGUI.GetValue("Status"), Integer)
-                        sb.AppendLine("[HKEY_CURRENT_USER\Software\DropGUI\GUIS\" & KeyGUI & "]")
-                        sb.AppendLine(Chr(34) & "Command" & Chr(34) & "=" & Chr(34) & Command & Chr(34))
-                        sb.AppendLine(Chr(34) & "Input" & Chr(34) & "=" & Chr(34) & Input & Chr(34))
-                        sb.AppendLine(Chr(34) & "Output" & Chr(34) & "=" & Chr(34) & Output & Chr(34))
-                        sb.AppendLine(Chr(34) & "Path" & Chr(34) & "=" & Chr(34) & Path & Chr(34))
-                        sb.AppendLine(Chr(34) & "Status" & Chr(34) & "=dword:" & Status)
-                        sb.AppendLine()
-                    End If
-                Next
-
-                'Write to file UNICODE
-                Using outfile As New StreamWriter(SaveFileDialog1.FileName, False, Encoding.Unicode)
-                    outfile.Write(sb.ToString())
-                End Using
-                MessageBox.Show("GUIs are saved to the reg file successfully", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    'Write to file UNICODE
+                    Using outfile As New StreamWriter(SaveFileDialog1.FileName, False, Encoding.Unicode)
+                        outfile.Write(sb.ToString())
+                    End Using
+                    MessageBox.Show("GUIs are saved to the reg file successfully", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            Else
+                MessageBox.Show("There is no GUI in the list to save", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
-        Else
-            MessageBox.Show("There is no GUI in the list to save", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
     End Sub
+
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
         Close()
     End Sub
