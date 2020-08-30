@@ -31,7 +31,7 @@ You can also use /@out pointer to tell the path of the processed file to be save
 Here is an exemple for Lame app : --preset extreme /@in /@out
 
 
-11- when done right click on the GUI you just created in the list and choose Activate
+11- When done, right click on the GUI you just created in the list and choose Activate
 
 
 Drop your file and they should be processed if info entered is correct
