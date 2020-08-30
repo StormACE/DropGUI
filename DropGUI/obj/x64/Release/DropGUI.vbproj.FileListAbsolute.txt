@@ -25,3 +25,17 @@ C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI
 C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.pdb
 C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.FormGUImanager.resources
 C:\Users\krypt\OneDrive\Documents\GitHub\DropGUI\DropGUI\obj\x64\Release\DropGUI.DialogNew.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\bin\x64\Release\DropGUI.exe.config
+C:\Users\krypt\Github\DropGUI\DropGUI\bin\x64\Release\DropGUI.exe
+C:\Users\krypt\Github\DropGUI\DropGUI\bin\x64\Release\DropGUI.pdb
+C:\Users\krypt\Github\DropGUI\DropGUI\bin\x64\Release\DropGUI.xml
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.DialogNew.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.FormGUImanager.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.FormMain.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.FormGUI.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.Resources.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.vbproj.GenerateResource.cache
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.vbproj.CoreCompileInputs.cache
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.exe
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.xml
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.pdb

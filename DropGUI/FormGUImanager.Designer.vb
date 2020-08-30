@@ -50,6 +50,8 @@ Partial Class FormGUImanager
         Me.CloneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.DeleteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ButtonSave = New System.Windows.Forms.Button()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.ContextMenuStrip3.SuspendLayout()
@@ -216,6 +218,17 @@ Partial Class FormGUImanager
         Me.DeleteToolStripMenuItem1.Size = New System.Drawing.Size(166, 32)
         Me.DeleteToolStripMenuItem1.Text = "Delete"
         '
+        'ButtonSave
+        '
+        Me.ButtonSave.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ButtonSave.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.ButtonSave.Location = New System.Drawing.Point(593, 496)
+        Me.ButtonSave.Name = "ButtonSave"
+        Me.ButtonSave.Size = New System.Drawing.Size(75, 36)
+        Me.ButtonSave.TabIndex = 3
+        Me.ButtonSave.Text = "Save"
+        Me.ButtonSave.UseVisualStyleBackColor = False
+        '
         'FormGUImanager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -223,6 +236,7 @@ Partial Class FormGUImanager
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(778, 544)
+        Me.Controls.Add(Me.ButtonSave)
         Me.Controls.Add(Me.ButtonClose)
         Me.Controls.Add(Me.ListViewGUI)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -265,4 +279,6 @@ Partial Class FormGUImanager
     Friend WithEvents CloneToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents DeleteToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ButtonSave As Button
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 End Class
