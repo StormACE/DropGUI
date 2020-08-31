@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.Win32
 ''' <summary>
-''' DropGUI 4.0.0.6
-''' 12 Aout 2020 to 30 Aout 2020
+''' DropGUI 4.0.0.7
+''' 12 Aout 2020 to 31 Aout 2020
 ''' Copyright Martin Laflamme 2003/2020
 ''' </summary>
 
@@ -10,7 +10,6 @@ Public Class FormMain
 #Region "Declarations"
     'Use for registry
     Private regKey As RegistryKey
-
     Private OutputPath As String = ""
     Private Debug As Integer = 0
 #End Region
@@ -88,76 +87,13 @@ Public Class FormMain
 
     Private Sub FormMain_DragDrop(sender As System.Object, e As System.Windows.Forms.DragEventArgs) Handles MyBase.DragDrop
         Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
-        Dim match As Boolean = False
-        Dim GUIName As String = ""
-        Dim Outputfile As String = ""
-        Dim Fcount As Integer = files.Count
-        Dim x As Integer = 0
-        ProgressBar1.Maximum = Fcount
-        For Each path As String In files
-            Dim ext As String = IO.Path.GetExtension(path)
-            Dim Filename As String = IO.Path.GetFileNameWithoutExtension(path)
-            regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
-            If regKey IsNot Nothing Then
-                For Each Name As String In regKey.GetSubKeyNames
-                    regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & Name, True)
-                    Dim Input As String = regKey.GetValue("Input")
-                    Dim Activate As Integer = regKey.GetValue("Status")
-                    If "." & Input = ext And Activate = 1 Then
-                        match = True
-                        GUIName = Name
-                    End If
-                Next
-
-                'We got a Match !!!
-                If match = True Then
-                    x += 1
-                    ProgressBar1.Value = x
-                    regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & GUIName, True)
-                    Dim Output As String = regKey.GetValue("Output")
-                    Dim ProgramPath As String = regKey.GetValue("Path")
-                    Dim Command As String = regKey.GetValue("Command")
-
-                    Dim Pos As Integer = InStr(1, Command, "/@in", CompareMethod.Text)
-                    If Pos <> 0 Then
-                        Do
-                            Command = Command.Replace("/@in", """" & path & """")
-                            Pos = InStr(1, Command, "/@in", CompareMethod.Text)
-                        Loop Until Pos = 0
-
-                        Pos = InStr(1, Command, "/@out", CompareMethod.Text)
-                        If OutputPath <> "" Then
-                            Outputfile = OutputPath & Filename & "." & Output
-                            Do
-                                Command = Command.Replace("/@out", """" & Outputfile & """")
-                                Pos = InStr(1, Command, "/@out", CompareMethod.Text)
-                            Loop Until Pos = 0
-                        Else
-                            MsgBox("Output Folder not selected")
-                        End If
-
-
-                    Else
-                        MsgBox("Pointer /@in must be use in your command")
-                    End If
-
-                    If Debug = 1 Then
-                        MsgBox(Command, MsgBoxStyle.Information, ProgramPath)
-                    End If
-
-                    LaunchApp(ProgramPath, Command)
-
-                    If x = Fcount Then
-                        MsgBox("Job Completed")
-                        ProgressBar1.Value = 0
-                    End If
-
-                Else
-                    MsgBox("GUI doesnt exist")
-                End If
-
-            End If
-        Next
+        'Lancer dans un nouveau thread
+        Dim Tasks As New DoDrop(files, OutputPath, Debug)
+        Dim Thread1 As New System.Threading.Thread(
+            AddressOf Tasks.Drop)
+        Thread1.Name = "DropGUIDoDrop"
+        Thread1.Priority = Threading.ThreadPriority.Normal
+        Thread1.Start() ' Start the new thread.
     End Sub
 
     Private Sub FormMain_DragEnter(sender As System.Object, e As System.Windows.Forms.DragEventArgs) Handles MyBase.DragEnter
@@ -166,10 +102,6 @@ Public Class FormMain
         End If
     End Sub
 
-    Private Sub FormMain_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
-        ProgressBar1.Width = Width - 32
-        ProgressBar1.Top = Height - 75
-    End Sub
 #End Region
 
 #Region "ContextMenu"
@@ -220,17 +152,6 @@ Public Class FormMain
         regKey.SetValue("Width", Width)
         regKey.SetValue("X", Location.X)
         regKey.SetValue("Y", Location.Y)
-    End Sub
-
-    Private Sub LaunchApp(ProgramPath As String, Command As String)
-        Dim info As New ProcessStartInfo
-        info.FileName = ProgramPath
-        info.Arguments = Command
-        info.CreateNoWindow = False
-        info.WindowStyle = ProcessWindowStyle.Normal
-
-        Dim App As Process = Process.Start(info)
-        App.WaitForExit()
     End Sub
 
     Private Sub ShowDebugMessageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowDebugMessageToolStripMenuItem.Click
