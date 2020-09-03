@@ -12,7 +12,6 @@ Public Class FormGUImanager
 #Region "Methods"
     Private Sub FormGUImanager_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Loadguis()
-
     End Sub
 
     Private Sub Form1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles MyBase.Paint
@@ -25,7 +24,6 @@ Public Class FormGUImanager
     End Sub
 
     Private Sub ListViewGUI_MouseUp(sender As Object, e As MouseEventArgs) Handles ListViewGUI.MouseUp
-
         If e.Button = MouseButtons.Right Then
             If ListViewGUI.SelectedItems.Count > 0 Then
                 Dim status As String = ListViewGUI.SelectedItems(0).SubItems(5).Text

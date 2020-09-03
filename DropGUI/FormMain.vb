@@ -1,8 +1,8 @@
 ﻿Imports Microsoft.Win32
 ''' <summary>
-''' DropGUI 4.0.0.7
-''' 12 Aout 2020 to 31 Aout 2020
-''' Copyright Martin Laflamme 2003/2020
+''' DropGUI 4.0.0.8
+''' 12 Aout 2020 to 3 septembre 2020
+''' Copyright Martin Laflamme 2004/2020
 ''' </summary>
 
 Public Class FormMain
@@ -17,7 +17,7 @@ Public Class FormMain
 #Region "Methods"
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Text = "DropGUI 4.0"
-        MinimumSize = New Drawing.Size(300, 300)
+        MinimumSize = New Size(300, 300)
 
         'Is Starting size and location exist in reg
         regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\Settings\WinSize", True)
@@ -85,18 +85,17 @@ Public Class FormMain
         SaveWinSize()
     End Sub
 
-    Private Sub FormMain_DragDrop(sender As System.Object, e As System.Windows.Forms.DragEventArgs) Handles MyBase.DragDrop
+    Private Sub FormMain_DragDrop(sender As System.Object, e As DragEventArgs) Handles MyBase.DragDrop
         Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
         'Lancer dans un nouveau thread
         Dim Tasks As New DoDrop(files, OutputPath, Debug)
-        Dim Thread1 As New System.Threading.Thread(
-            AddressOf Tasks.Drop)
+        Dim Thread1 As New Threading.Thread(AddressOf Tasks.Drop)
         Thread1.Name = "DropGUIDoDrop"
         Thread1.Priority = Threading.ThreadPriority.Normal
         Thread1.Start() ' Start the new thread.
     End Sub
 
-    Private Sub FormMain_DragEnter(sender As System.Object, e As System.Windows.Forms.DragEventArgs) Handles MyBase.DragEnter
+    Private Sub FormMain_DragEnter(sender As System.Object, e As DragEventArgs) Handles MyBase.DragEnter
         If e.Data.GetDataPresent(DataFormats.FileDrop) Then
             e.Effect = DragDropEffects.Copy
         End If

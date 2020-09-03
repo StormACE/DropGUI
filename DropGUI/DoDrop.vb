@@ -59,12 +59,12 @@ Public Class DoDrop
                                 Pos = InStr(1, Command, "/@out", CompareMethod.Text)
                             Loop Until Pos = 0
                         Else
-                            MsgBox("Output Folder not selected")
+                            MessageBox.Show("Output Folder not selected", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
 
 
                     Else
-                        MsgBox("Pointer /@in must be use in your command")
+                        MessageBox.Show("Pointer /@in must be use in your command", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
 
                     If Debug = 1 Then
@@ -74,11 +74,11 @@ Public Class DoDrop
                     LaunchApp(ProgramPath, Command)
 
                     If x = Fcount Then
-                        MsgBox("Job Completed")
+                        MessageBox.Show("Job Completed", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
 
                 Else
-                    MsgBox("GUI doesnt exist")
+                    MessageBox.Show("The GUI does'nt exist!", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
 
             End If
