@@ -40,6 +40,69 @@ Public Class DialogNew
             TextBox4.Text = p
             TextBox5.Text = C
         End If
+
+        'Add ToolTips To Controls
+        Dim buttonToolTip1 As New ToolTip()
+        Dim buttonToolTip2 As New ToolTip()
+        Dim buttonToolTip3 As New ToolTip()
+        Dim buttonToolTip4 As New ToolTip()
+        Dim buttonToolTip5 As New ToolTip()
+
+        buttonToolTip1.UseFading = True
+        buttonToolTip1.UseAnimation = True
+        buttonToolTip1.IsBalloon = True
+        buttonToolTip1.ShowAlways = True
+        buttonToolTip1.AutoPopDelay = 2500
+        buttonToolTip1.InitialDelay = 500
+        buttonToolTip1.ReshowDelay = 500
+        buttonToolTip1.ToolTipIcon = ToolTipIcon.Info
+
+        buttonToolTip2.UseFading = True
+        buttonToolTip2.UseAnimation = True
+        buttonToolTip2.IsBalloon = True
+        buttonToolTip2.ShowAlways = True
+        buttonToolTip2.AutoPopDelay = 2500
+        buttonToolTip2.InitialDelay = 500
+        buttonToolTip2.ReshowDelay = 500
+        buttonToolTip2.ToolTipIcon = ToolTipIcon.Info
+
+        buttonToolTip3.UseFading = True
+        buttonToolTip3.UseAnimation = True
+        buttonToolTip3.IsBalloon = True
+        buttonToolTip3.ShowAlways = True
+        buttonToolTip3.AutoPopDelay = 2500
+        buttonToolTip3.InitialDelay = 500
+        buttonToolTip3.ReshowDelay = 500
+        buttonToolTip3.ToolTipIcon = ToolTipIcon.Info
+
+        buttonToolTip4.UseFading = True
+        buttonToolTip4.UseAnimation = True
+        buttonToolTip4.IsBalloon = True
+        buttonToolTip4.ShowAlways = True
+        buttonToolTip4.AutoPopDelay = 2500
+        buttonToolTip4.InitialDelay = 500
+        buttonToolTip4.ReshowDelay = 500
+        buttonToolTip4.ToolTipIcon = ToolTipIcon.Info
+
+        buttonToolTip5.UseFading = True
+        buttonToolTip5.UseAnimation = True
+        buttonToolTip5.IsBalloon = True
+        buttonToolTip5.ShowAlways = True
+        buttonToolTip5.AutoPopDelay = 2500
+        buttonToolTip5.InitialDelay = 500
+        buttonToolTip5.ReshowDelay = 500
+        buttonToolTip5.ToolTipIcon = ToolTipIcon.Info
+
+        buttonToolTip1.ToolTipTitle = "Input"
+        buttonToolTip1.SetToolTip(TextBox1, "Enter the extention of the file to process")
+        buttonToolTip2.ToolTipTitle = "Output"
+        buttonToolTip2.SetToolTip(TextBox2, "Enter the extention of the file to be saved")
+        buttonToolTip1.ToolTipTitle = "Name"
+        buttonToolTip1.SetToolTip(TextBox3, "Enter a name")
+        buttonToolTip2.ToolTipTitle = "Path"
+        buttonToolTip2.SetToolTip(TextBox4, "Choose or enter your application path")
+        buttonToolTip1.ToolTipTitle = "Command"
+        buttonToolTip1.SetToolTip(TextBox5, "Enter your command to the application" & Environment.NewLine & "/@in pointer to input file" & Environment.NewLine & "/@out pointer to output file")
     End Sub
 
     Private Sub ButtonBrowse_Click(sender As Object, e As EventArgs) Handles ButtonBrowse.Click

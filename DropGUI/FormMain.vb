@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.Win32
 ''' <summary>
-''' DropGUI 4.0.1.10
+''' DropGUI 4.0.2.11
 ''' 12 Aout 2020 to 7 septembre 2020
 ''' Copyright Martin Laflamme 2004/2020
 ''' 
