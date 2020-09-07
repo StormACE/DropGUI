@@ -12,6 +12,33 @@ Public Class FormGUImanager
 #Region "Methods"
     Private Sub FormGUImanager_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Loadguis()
+
+        'Add ToolTips To Controls
+        Dim buttonToolTip1 As New ToolTip()
+        Dim buttonToolTip2 As New ToolTip()
+
+        buttonToolTip1.UseFading = True
+        buttonToolTip1.UseAnimation = True
+        buttonToolTip1.IsBalloon = True
+        buttonToolTip1.ShowAlways = True
+        buttonToolTip1.AutoPopDelay = 2500
+        buttonToolTip1.InitialDelay = 500
+        buttonToolTip1.ReshowDelay = 500
+        buttonToolTip1.ToolTipIcon = ToolTipIcon.Info
+
+        buttonToolTip2.UseFading = True
+        buttonToolTip2.UseAnimation = True
+        buttonToolTip2.IsBalloon = True
+        buttonToolTip2.ShowAlways = True
+        buttonToolTip2.AutoPopDelay = 2500
+        buttonToolTip2.InitialDelay = 500
+        buttonToolTip2.ReshowDelay = 500
+        buttonToolTip2.ToolTipIcon = ToolTipIcon.Info
+
+        buttonToolTip1.ToolTipTitle = "Save"
+        buttonToolTip1.SetToolTip(ButtonSave, "Save List to .reg file")
+        buttonToolTip2.ToolTipTitle = "Close"
+        buttonToolTip2.SetToolTip(ButtonClose, "Close this Window")
     End Sub
 
     Private Sub Form1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles MyBase.Paint

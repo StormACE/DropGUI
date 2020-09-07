@@ -39,4 +39,3 @@ C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.vbproj.CoreCompile
 C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.exe
 C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.xml
 C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.pdb
-C:\Users\krypt\Github\DropGUI\DropGUI\obj\x64\Release\DropGUI.vbprojAssemblyReference.cache
