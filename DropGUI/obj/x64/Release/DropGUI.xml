@@ -24,9 +24,11 @@ DropGUI
 </member>
 <member name="T:DropGUI.FormMain">
  <summary>
- DropGUI 4.0.0.9
+ DropGUI 4.0.1.10
  12 Aout 2020 to 7 septembre 2020
  Copyright Martin Laflamme 2004/2020
+ 
+ Fix bug with destination folder
  </summary>
 </member>
 </members>

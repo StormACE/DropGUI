@@ -1,8 +1,10 @@
 ﻿Imports Microsoft.Win32
 ''' <summary>
-''' DropGUI 4.0.0.9
+''' DropGUI 4.0.1.10
 ''' 12 Aout 2020 to 7 septembre 2020
 ''' Copyright Martin Laflamme 2004/2020
+''' 
+''' Fix bug with destination folder
 ''' </summary>
 
 Public Class FormMain
@@ -109,6 +111,7 @@ Public Class FormMain
         If FolderBrowserDialog1.ShowDialog = DialogResult.OK Then
             regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\Settings\OutputPath", True)
             regKey.SetValue("", FolderBrowserDialog1.SelectedPath)
+            OutputPath = FolderBrowserDialog1.SelectedPath
         End If
     End Sub
 
