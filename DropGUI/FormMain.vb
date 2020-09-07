@@ -89,12 +89,16 @@ Public Class FormMain
 
     Private Sub FormMain_DragDrop(sender As System.Object, e As DragEventArgs) Handles MyBase.DragDrop
         Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
-        'Lancer dans un nouveau thread
-        Dim Tasks As New DoDrop(files, OutputPath, Debug)
-        Dim Thread1 As New Threading.Thread(AddressOf Tasks.Drop)
-        Thread1.Name = "DropGUIDoDrop"
-        Thread1.Priority = Threading.ThreadPriority.Normal
-        Thread1.Start() ' Start the new thread.
+        If OutputPath <> "" Then
+            'Lancer dans un nouveau thread
+            Dim Tasks As New DoDrop(files, OutputPath, Debug)
+            Dim Thread1 As New Threading.Thread(AddressOf Tasks.Drop)
+            Thread1.Name = "DropGUIDoDrop"
+            Thread1.Priority = Threading.ThreadPriority.Normal
+            Thread1.Start() ' Start the new thread.
+        Else
+            MessageBox.Show("You have to Select your Destination Folder before doing this!!", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 
     Private Sub FormMain_DragEnter(sender As System.Object, e As DragEventArgs) Handles MyBase.DragEnter
