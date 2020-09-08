@@ -32,6 +32,8 @@ Public Class DialogNew
     End Sub
 
     Private Sub DialogNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'Populate textbox if we edit
         If ed = True Then
             Text = "Edit"
             TextBox1.Text = I
@@ -52,7 +54,7 @@ Public Class DialogNew
         buttonToolTip1.UseAnimation = True
         buttonToolTip1.IsBalloon = True
         buttonToolTip1.ShowAlways = True
-        buttonToolTip1.AutoPopDelay = 2500
+        buttonToolTip1.AutoPopDelay = 1000
         buttonToolTip1.InitialDelay = 500
         buttonToolTip1.ReshowDelay = 500
         buttonToolTip1.ToolTipIcon = ToolTipIcon.Info
@@ -61,7 +63,7 @@ Public Class DialogNew
         buttonToolTip2.UseAnimation = True
         buttonToolTip2.IsBalloon = True
         buttonToolTip2.ShowAlways = True
-        buttonToolTip2.AutoPopDelay = 2500
+        buttonToolTip2.AutoPopDelay = 1000
         buttonToolTip2.InitialDelay = 500
         buttonToolTip2.ReshowDelay = 500
         buttonToolTip2.ToolTipIcon = ToolTipIcon.Info
@@ -97,12 +99,12 @@ Public Class DialogNew
         buttonToolTip1.SetToolTip(TextBox1, "Enter the extention of the file to process")
         buttonToolTip2.ToolTipTitle = "Output"
         buttonToolTip2.SetToolTip(TextBox2, "Enter the extention of the file to be saved")
-        buttonToolTip1.ToolTipTitle = "Name"
-        buttonToolTip1.SetToolTip(TextBox3, "Enter a name")
-        buttonToolTip2.ToolTipTitle = "Path"
-        buttonToolTip2.SetToolTip(TextBox4, "Choose or enter your application path")
-        buttonToolTip1.ToolTipTitle = "Command"
-        buttonToolTip1.SetToolTip(TextBox5, "Enter your command to the application" & Environment.NewLine & "/@in pointer to input file" & Environment.NewLine & "/@out pointer to output file")
+        buttonToolTip3.ToolTipTitle = "Name"
+        buttonToolTip3.SetToolTip(TextBox3, "Enter a name")
+        buttonToolTip4.ToolTipTitle = "Path"
+        buttonToolTip4.SetToolTip(TextBox4, "Choose or enter your application path")
+        buttonToolTip5.ToolTipTitle = "Command"
+        buttonToolTip5.SetToolTip(TextBox5, "Enter your command to the application" & Environment.NewLine & "/@in pointer to input file" & Environment.NewLine & "/@out pointer to output file")
     End Sub
 
     Private Sub ButtonBrowse_Click(sender As Object, e As EventArgs) Handles ButtonBrowse.Click
@@ -160,10 +162,10 @@ Public Class DialogNew
                     End With
                     Close()
                 Else
-                    MessageBox.Show("GUI Name already exist!")
+                    MessageBox.Show("GUI Name already exist!", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             Else
-                MessageBox.Show("You must fill all the cases")
+                MessageBox.Show("You must fill all the cases", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
             'Edit Item
         Else
@@ -220,7 +222,7 @@ Public Class DialogNew
                 End If
 
             Else
-                MessageBox.Show("You must fill all the cases")
+                MessageBox.Show("You must fill all the cases", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End If
     End Sub

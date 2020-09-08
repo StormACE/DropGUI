@@ -1,10 +1,10 @@
 ﻿Imports Microsoft.Win32
 ''' <summary>
-''' DropGUI 4.0.2.11
-''' 12 Aout 2020 to 7 septembre 2020
+''' DropGUI 4.0.3.12
+''' 12 Aout 2020 to 8 septembre 2020
 ''' Copyright Martin Laflamme 2004/2020
 ''' 
-''' Fix bug with destination folder
+''' Fix bug with tooltips
 ''' </summary>
 
 Public Class FormMain
