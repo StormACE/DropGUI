@@ -28,7 +28,9 @@ How does it works:
 
 You can also use /@out pointer to tell the path of the processed file to be saved..
 
-Here is an exemple for Lame app : --preset extreme /@in /@out
+Here is an example for Lame app : --preset extreme /@in /@out
+
+Another example to convert mkv video to mp3 with ffmpeg : -i /@in -b:a 320K -vn /@out
 
 
 11- When done, right click on the GUI you just created in the list and choose Activate
