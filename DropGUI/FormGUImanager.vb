@@ -79,18 +79,21 @@ Public Class FormGUImanager
         Dim Newdia As New DialogNew("", "", "", "", "", False, ListViewGUI)
         Newdia.ShowDialog()
         Newdia.Dispose()
+        ListViewGUI.Sorting = SortOrder.Ascending
     End Sub
 
     Private Sub NewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem1.Click
         Dim Newdia As New DialogNew("", "", "", "", "", False, ListViewGUI)
         Newdia.ShowDialog()
         Newdia.Dispose()
+        ListViewGUI.Sorting = SortOrder.Ascending
     End Sub
 
     Private Sub NewToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem2.Click
         Dim Newdia As New DialogNew("", "", "", "", "", False, ListViewGUI)
         Newdia.ShowDialog()
         Newdia.Dispose()
+        ListViewGUI.Sorting = SortOrder.Ascending
     End Sub
 
     Private Sub ActivateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivateToolStripMenuItem.Click
@@ -114,18 +117,22 @@ Public Class FormGUImanager
 
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
         LaunchEditDialogue()
+        ListViewGUI.Sorting = SortOrder.Ascending
     End Sub
 
     Private Sub EditToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem1.Click
         LaunchEditDialogue()
+        ListViewGUI.Sorting = SortOrder.Ascending
     End Sub
 
     Private Sub CloneToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles CloneToolStripMenuItem2.Click
         CloneItem()
+        ListViewGUI.Sorting = SortOrder.Ascending
     End Sub
 
     Private Sub CloneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloneToolStripMenuItem.Click
         CloneItem()
+        ListViewGUI.Sorting = SortOrder.Ascending
     End Sub
 
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click

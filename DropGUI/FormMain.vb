@@ -5,6 +5,7 @@
 ''' Copyright Martin Laflamme 2004/2020
 ''' 
 ''' Select destination show selected destinations if one already selected
+''' List is sorted after editing creating or cloning a GUI
 ''' </summary>
 
 Public Class FormMain
