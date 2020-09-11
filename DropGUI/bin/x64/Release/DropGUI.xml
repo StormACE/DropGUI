@@ -24,11 +24,11 @@ DropGUI
 </member>
 <member name="T:DropGUI.FormMain">
  <summary>
- DropGUI 4.0.3.12
- 12 Aout 2020 to 8 septembre 2020
+ DropGUI 4.0.4.13
+ 12 Aout 2020 to 11 septembre 2020
  Copyright Martin Laflamme 2004/2020
  
- Fix bug with tooltips
+ Select destination show selected destinations if one already selected
  </summary>
 </member>
 </members>
