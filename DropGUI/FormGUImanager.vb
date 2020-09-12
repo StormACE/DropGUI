@@ -312,9 +312,14 @@ Public Class FormGUImanager
     End Sub
 
     Private Sub DeleteItem()
-        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
-        regKey.DeleteSubKey(ListViewGUI.SelectedItems(0).Text)
-        ListViewGUI.SelectedItems(0).Remove()
+        Dim result As DialogResult = MessageBox.Show("Do you really want to delete " & ListViewGUI.SelectedItems(0).Text & "?", "DropGUI", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Select Case result
+            Case DialogResult.Yes
+                regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
+                regKey.DeleteSubKey(ListViewGUI.SelectedItems(0).Text)
+                ListViewGUI.SelectedItems(0).Remove()
+        End Select
+
     End Sub
 
 
