@@ -52,15 +52,17 @@ Public Class DoDrop
                         Loop Until Pos = 0
 
                         Pos = InStr(1, Command, "/@out", CompareMethod.Text)
-                        If OutputPath <> "" Then
-                            Outputfile = OutputPath & Filename & "." & Output
-                            Do
-                                Command = Command.Replace("/@out", """" & Outputfile & """")
-                                Pos = InStr(1, Command, "/@out", CompareMethod.Text)
-                            Loop Until Pos = 0
+
+                        If OutputPath.Length > 3 Then
+                            Outputfile = OutputPath & "\" & Filename & "." & Output
                         Else
-                            MessageBox.Show("Output Folder not selected", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            Outputfile = OutputPath & Filename & "." & Output
                         End If
+
+                        Do
+                            Command = Command.Replace("/@out", """" & Outputfile & """")
+                            Pos = InStr(1, Command, "/@out", CompareMethod.Text)
+                        Loop Until Pos = 0
 
 
                     Else
