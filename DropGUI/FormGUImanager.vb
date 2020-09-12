@@ -288,27 +288,33 @@ Public Class FormGUImanager
         Dim Path As String = ListViewGUI.SelectedItems(0).SubItems(2).Text
         Dim Com As String = ListViewGUI.SelectedItems(0).SubItems(3).Text
         Dim output As String = ListViewGUI.SelectedItems(0).SubItems(4).Text
+        Name = Name & " (Clone)"
 
-        'Add to listview
+        'Check if item already exist
         Dim Lvi As ListViewItem
-        Lvi = ListViewGUI.Items.Add(Name & " (Clone)")
-        With Lvi
-            .SubItems.Add(input)
-            .SubItems.Add(Path)
-            .SubItems.Add(Com)
-            .SubItems.Add(output)
-            .SubItems.Add("Deactivated")
-        End With
+        Lvi = ListViewGUI.FindItemWithText(Name)
+        If Lvi Is Nothing Then
+            Lvi = ListViewGUI.Items.Add(Name)
+            With Lvi
+                .SubItems.Add(input)
+                .SubItems.Add(Path)
+                .SubItems.Add(Com)
+                .SubItems.Add(output)
+                .SubItems.Add("Deactivated")
+            End With
 
-        'Create reg key
-        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
-        regKey.CreateSubKey(Name & " (Clone)")
-        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & Name & " (Clone)", True)
-        regKey.SetValue("Command", Com)
-        regKey.SetValue("Input", input)
-        regKey.SetValue("Output", output)
-        regKey.SetValue("Path", Path)
-        regKey.SetValue("Status", 0)
+            'Create reg key
+            regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS", True)
+            regKey.CreateSubKey(Name)
+            regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & Name, True)
+            regKey.SetValue("Command", Com)
+            regKey.SetValue("Input", input)
+            regKey.SetValue("Output", output)
+            regKey.SetValue("Path", Path)
+            regKey.SetValue("Status", 0)
+        Else
+            MessageBox.Show("This GUI " & """" & Name & " Already exist!", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 
     Private Sub DeleteItem()
@@ -319,7 +325,6 @@ Public Class FormGUImanager
                 regKey.DeleteSubKey(ListViewGUI.SelectedItems(0).Text)
                 ListViewGUI.SelectedItems(0).Remove()
         End Select
-
     End Sub
 
 

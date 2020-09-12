@@ -1,11 +1,12 @@
 ﻿Imports Microsoft.Win32
 ''' <summary>
-''' DropGUI 4.0.4.13
-''' 12 Aout 2020 to 11 septembre 2020
+''' DropGUI 4.0.5.14
+''' 12 Aout 2020 to 12 septembre 2020
 ''' Copyright Martin Laflamme 2004/2020
 ''' 
-''' Select destination show selected destinations if one already selected
-''' List is sorted after editing creating or cloning a GUI
+''' Better Cloning
+''' Ask before delete
+''' 
 ''' </summary>
 
 Public Class FormMain
