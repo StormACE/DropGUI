@@ -1,0 +1,15 @@
+C:\Users\krypt\Github\DropGUI\DropGUI\bin\Release\DropGUI.exe.config
+C:\Users\krypt\Github\DropGUI\DropGUI\bin\Release\DropGUI.exe
+C:\Users\krypt\Github\DropGUI\DropGUI\bin\Release\DropGUI.pdb
+C:\Users\krypt\Github\DropGUI\DropGUI\bin\Release\DropGUI.xml
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.vbprojAssemblyReference.cache
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.DialogNew.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.FormGUImanager.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.FormMain.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.FormGUI.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.Resources.resources
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.vbproj.GenerateResource.cache
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.vbproj.CoreCompileInputs.cache
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.exe
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.xml
+C:\Users\krypt\Github\DropGUI\DropGUI\obj\Release\DropGUI.pdb

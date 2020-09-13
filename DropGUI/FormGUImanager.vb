@@ -288,13 +288,11 @@ Public Class FormGUImanager
         Dim Path As String = ListViewGUI.SelectedItems(0).SubItems(2).Text
         Dim Com As String = ListViewGUI.SelectedItems(0).SubItems(3).Text
         Dim output As String = ListViewGUI.SelectedItems(0).SubItems(4).Text
-        Name = Name & " (Clone)"
+        Name &= " (Clone)"
 
-        'Check if item already exist
-        Dim Lvi As ListViewItem
-        Lvi = ListViewGUI.FindItemWithText(Name)
-        If Lvi Is Nothing Then
-            Lvi = ListViewGUI.Items.Add(Name)
+        regKey = Registry.CurrentUser.OpenSubKey("Software\DropGUI\GUIS\" & Name, True)
+        If regKey Is Nothing Then
+            Dim Lvi As ListViewItem = ListViewGUI.Items.Add(Name)
             With Lvi
                 .SubItems.Add(input)
                 .SubItems.Add(Path)
@@ -313,7 +311,7 @@ Public Class FormGUImanager
             regKey.SetValue("Path", Path)
             regKey.SetValue("Status", 0)
         Else
-            MessageBox.Show("This GUI " & """" & Name & " Already exist!", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("This GUI " & """" & Name & """ Already exist!", "DropGUI", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
